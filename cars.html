@@ -30,7 +30,6 @@
 
 
             console.log("i am in");
-            //var img1 ="<img class='i20img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnIS4USs7V4YvUfWbX-fT5C393DJykss3NptoUmZvUgjU_Ly2nNboIwJX'>"
              $('body').append("<select class='cars' ></select>");
             $('.cars').append("<option class='cname' data-item='0' value='hyundaicars'>hyundai_cars</option>");
             $('.cars').append("<option class='cname' data-item='1' value='i10'>i10</option>");
@@ -40,8 +39,8 @@
                 $('.veri').remove();
                 $('.brezi').remove();
                 $('.altoi').remove();
-                    var sel= $('option:selected', this).data("item"); //this always returns the first attr.  What should I do to get this to return the child element selected.
-               console.log(sel);
+                    var sel= $('option:selected', this).data("item");
+                    console.log(sel);
                 console.log("this is done");
                 if (sel==1) {
                     var i20sr='http://www.topgear.com/india/images/stories/articles/512x288/2015Mar12033740.jpg';
@@ -62,8 +61,7 @@
             $('.cars').remove();
 
             console.log("i am out");
-            //var img1 ="<img class='i20img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnIS4USs7V4YvUfWbX-fT5C393DJykss3NptoUmZvUgjU_Ly2nNboIwJX'>"
-            $('body').append("<select class='cars' ></select>");
+              $('body').append("<select class='cars' ></select>");
             $('.cars').append("<option class='cname' data-ch='0' value='maruthicars'>maruthi_cars</option>");
             $('.cars').append("<option class='cname' data-ch='1' value='brezza'>brezza</option>");
             $('.cars').append("<option class='cname' data-ch='2' value='alto'>alto</option>");
@@ -72,7 +70,7 @@
                 $('.veri').remove();
                 $('.brezi').remove();
                 $('.altoi').remove();
-                var choice= $('option:selected', this).data("ch"); //this always returns the first attr.  What should I do to get this to return the child element selected.
+                var choice= $('option:selected', this).data("ch");
                 console.log(choice);
                 console.log("this is done");
                 if (choice==1) {
