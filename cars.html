@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cars dropdown</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<select class="car_brands">
+    <option class="brands"  data-va="0"   value="carbrands">carbrands</option>
+    <option class="brands"  data-va="1" value="hyundai">hyundai</option>
+    <option class="brands"  data-va="2" value="maruthi">Maruthi</option>
+</select>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $('.cars').remove();
+        $('.car').remove();
+        $(document).on('change', 'select', function(e){
+            var op= $('option:selected', this).data("va"); //this always returns the first attr.  What should I do to get this to return the child element selected.
+            console.log(op);
+
+        if (op==1)
+        {
+            $('.cars').remove();
+
+
+            console.log("i am in");
+            //var img1 ="<img class='i20img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnIS4USs7V4YvUfWbX-fT5C393DJykss3NptoUmZvUgjU_Ly2nNboIwJX'>"
+             $('body').append("<select class='cars' ></select>");
+            $('.cars').append("<option class='cname' data-item='0' value='hyundaicars'>hyundai_cars</option>");
+            $('.cars').append("<option class='cname' data-item='1' value='i10'>i10</option>");
+            $('.cars').append("<option class='cname' data-item='2' value='verna'>verna</option>");
+            $(document).on('change', 'select', function(e) {
+                $('.i20i').remove();
+                $('.veri').remove();
+                $('.brezi').remove();
+                $('.altoi').remove();
+                    var sel= $('option:selected', this).data("item"); //this always returns the first attr.  What should I do to get this to return the child element selected.
+               console.log(sel);
+                console.log("this is done");
+                if (sel==1) {
+                    var i20sr='http://www.topgear.com/india/images/stories/articles/512x288/2015Mar12033740.jpg';
+                    var i20img = "<img class='i20i' src='"+i20sr+"'>";
+                    $('body').append(i20img);
+                }
+                else
+                {
+                  var versr='http://www.hyundai.com/wcm/idc/groups/sgvehiclecontent/@in/documents/sitecontent/mdaw/mtez/~edisp/in_main_rbi_nw_verna.png';
+                  var verimg="<img class='veri' src='"+versr+"'>";
+                  $('body').append(verimg);
+                }
+            });
+
+        }
+        else if(op==2)
+        {
+            $('.cars').remove();
+
+            console.log("i am out");
+            //var img1 ="<img class='i20img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgnIS4USs7V4YvUfWbX-fT5C393DJykss3NptoUmZvUgjU_Ly2nNboIwJX'>"
+            $('body').append("<select class='cars' ></select>");
+            $('.cars').append("<option class='cname' data-ch='0' value='maruthicars'>maruthi_cars</option>");
+            $('.cars').append("<option class='cname' data-ch='1' value='brezza'>brezza</option>");
+            $('.cars').append("<option class='cname' data-ch='2' value='alto'>alto</option>");
+            $(document).on('change', 'select', function(e) {
+                $('.i20i').remove();
+                $('.veri').remove();
+                $('.brezi').remove();
+                $('.altoi').remove();
+                var choice= $('option:selected', this).data("ch"); //this always returns the first attr.  What should I do to get this to return the child element selected.
+                console.log(choice);
+                console.log("this is done");
+                if (choice==1) {
+                    var brezsr='https://imgct2.aeplcdn.com/img/800x600/car-data/big/maruti-suzuki-vitara-brezza-default-image.png-version201805101633.png?v=25';
+                    var brezimg = "<img class='brezi' src='"+brezsr+"'>";
+                    $('body').append(brezimg);
+                }
+                else
+                {
+                    var altosr='https://imgd.aeplcdn.com/1056x594/n/ns5dora_1420343.jpg?q=80';
+                    var altoimg="<img class='altoi' src='"+altosr+"'>";
+                    $('body').append(altoimg);
+                }
+            });
+        }
+
+        });
+    });
+</script>
+</html>
